@@ -16,7 +16,7 @@ This is a GitHub Action definition that lints Mapbox GL styles in a repo.
 
 To lint a pull request and add a comment on failure you might use a workflow like this:
 
-```
+```yml
 on: 
   pull_request:
     branches:
