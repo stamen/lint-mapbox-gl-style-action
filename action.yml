@@ -24,6 +24,7 @@ runs:
     - id: run-lint
       name: Run lint command
       run: |
+        echo node_modules/.bin
         export LINTER_OUTPUT="$(bin/mapbox-gl-style-lint ${{ inputs.style-paths }})"
         LINTER_OUTPUT="${LINTER_OUTPUT//'%'/'%25'}"
         LINTER_OUTPUT="${LINTER_OUTPUT//$'\n'/'%0A'}"
