@@ -18,7 +18,7 @@ runs:
 
     - id: install
       name: Install dependencies
-      run: npm install
+      run: yarn install
       shell: bash
 
     - id: run-lint
