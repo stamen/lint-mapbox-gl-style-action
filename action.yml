@@ -18,6 +18,8 @@ runs:
     - id: install
       name: Install dependencies
       run: npm install git+https://github.com/stamen/mapbox-gl-style-linter#v0.1.0 --global
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
       shell: bash
 
     - id: run-lint
