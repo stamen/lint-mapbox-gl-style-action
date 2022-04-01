@@ -1,0 +1,22 @@
+{
+  "name": "lint-mapbox-gl-style-action",
+  "version": "1.0.0",
+  "description": "This is a GitHub Action definition that lints Mapbox GL styles in a repo.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stamen/lint-mapbox-gl-style-action.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stamen/lint-mapbox-gl-style-action/issues"
+  },
+  "homepage": "https://github.com/stamen/lint-mapbox-gl-style-action#readme",
+  "dependencies": {
+    "mapbox-gl-style-linter": "github:stamen/mapbox-gl-style-linter#v0.1.0"
+  }
+}
