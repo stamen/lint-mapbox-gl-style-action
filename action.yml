@@ -2,28 +2,28 @@ name: 'Lint Mapbox GL Style'
 description: 'Lint Mapbox GL Style'
 inputs:
   style-paths:
-    description: "Path of styles to lint"
+    description: 'Path of styles to lint'
     required: true
 outputs:
   lint-message:
-    description: "Lint message"
+    description: 'Lint message'
     value: ${{ steps.run-lint.outputs.lint-message }}
 runs:
-  using: "composite"
+  using: 'composite'
   steps:
     - uses: actions/setup-node@v2
       with:
-        node-version: '11'
+        node-version: '14'
 
     - id: install
       name: Install dependencies
-      run: npm install @mapbox/mapbox-gl-style-spec --global
+      run: npm install github:stamen/mapbox-gl-style-linter#v0.1.1 --global
       shell: bash
 
     - id: run-lint
       name: Run lint command
       run: |
-        export LINTER_OUTPUT="$(gl-style-validate ${{ inputs.style-paths }})"
+        export LINTER_OUTPUT="$(mapbox-gl-style-lint ${{ inputs.style-paths }})"
         LINTER_OUTPUT="${LINTER_OUTPUT//'%'/'%25'}"
         LINTER_OUTPUT="${LINTER_OUTPUT//$'\n'/'%0A'}"
         LINTER_OUTPUT="${LINTER_OUTPUT//$'\r'/'%0D'}"
